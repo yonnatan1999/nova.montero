@@ -137,7 +137,7 @@ function getSampleProperties() {
             bathrooms: 3,
             area: 280,
             parking: 2,
-            image: 'assets/images/propiedad 1/principal.png',
+            image: 'assets/images/propiedad 1/principal.webp',
             description: 'Hermosa casa moderna con acabados de lujo...',
             whatsappMessage: 'Hola, vi la Casa Moderna en Residencial Las Flores y estoy interesado'
         }

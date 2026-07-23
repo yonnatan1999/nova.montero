@@ -1,0 +1,31 @@
+RESUMEN DEL DISEÑO DE MARCA Y EXPERIENCIA DE USUARIO: NOVAMONTERO
+============================================================================
+
+1. CONCEPTO DE MARCA Y IDENTIDAD
+--------------------------------------------------
+- Nombre de la marca: NovaMontero
+- Enfoque: Plataforma inmobiliaria exclusiva centrada inicialmente en una propiedad principal en Montero, Santa Cruz, Bolivia.
+- Paleta de Colores:
+  * Primario: Negro (#1a1a1a) - Elegancia, sofisticación y modernidad.
+  * Secundario: Dorado (#D4AF37) - Lujo y exclusividad en acentos y llamadas a la acción.
+  * Acento: Verde corporativo para botones y enlaces directos de WhatsApp.
+
+2. DISEÑO DE LA PÁGINA PRINCIPAL (INDEX.HTML)
+--------------------------------------------------
+- Header Fijo: Logotipo tipográfico destacando "Nova" en tono dorado y "Montero" en blanco, acompañado de navegación limpia (Inicio, Propiedades, Contacto).
+- Hero Section: Imagen de fachada de fondo tratada con un filtro oscuro (overlay) al 50% para resaltar los textos de bienvenida sin perder legibilidad.
+- Tarjeta de Presentación de la Propiedad:
+  * Inmueble destacado: Casa Moderna en Residencial Las Flores ($850,000 Bs).
+  * Estructura: Esquinas sutilmente redondeadas, fondo blanco inmaculado, sombras difuminadas suaves y etiqueta dorada flotante.
+  * Datos clave visibles: 4 habitaciones, 3 baños, 280 m² y 2 espacios de estacionamiento.
+- Secciones complementarias: Bloque de beneficios estructurado en columnas minimalistas con iconos lineales dorados y sección de contacto directo.
+
+3. DISEÑO DE LA PÁGINA DE DETALLE (PROPIEDADES/1/INDEX.HTML)
+--------------------------------------------------
+- Encabezado y Estadísticas: Visualización de la fachada principal junto con la etiqueta de precio y bloques simétricos con iconos para habitaciones, baños, área construida y estacionamientos.
+- Galería Fotográfica Organizada: Cuadrícula en mosaico para mostrar de forma ordenada los espacios clave:
+  * Sala de estar con iluminación cálida.
+  * Cocina moderna de líneas limpias.
+  * Recámara principal.
+  * Jardín trasero y área de servicio.
+- Módulo de Conversión y Contacto: Tarjeta lateral fija con canales de atención directa, botón flotante de WhatsApp con mensaje predefinido para la propiedad, y un código QR al pie para compartir fácilmente desde dispositivos móviles.

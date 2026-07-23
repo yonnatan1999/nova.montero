@@ -1,0 +1,16 @@
+# Archivo CNAME para GitHub Pages
+# Este archivo especifica tu dominio personalizado
+# Documentación: https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site
+
+# Instrucciones:
+# 1. Reemplaza el contenido de este archivo con tu dominio
+# 2. Sube el archivo a la raíz de tu repositorio
+# 3. Configura los DNS de tu dominio:
+#    - Record A: 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153
+#    - Record CNAME: tu-usuario.github.io
+
+# Ejemplo de contenido:
+# www.tu-dominio.com
+
+# Nota: El archivo debe contener solo el dominio, sin protocolo (http/https)
+# ni barras inclinadas al final

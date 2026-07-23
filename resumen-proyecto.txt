@@ -1,0 +1,180 @@
+RESUMEN DEL PROYECTO: NOVAMONTERO - PÁGINA DE VENTA DE PROPIEDADES EN MONTERREY, BOLIVIA
+========================================================================================
+
+FECHA: 22 de julio de 2026
+UBICACIÓN: Monterrey, Santa Cruz, Bolivia
+MARCA: NovaMontero
+
+DESCRIPCIÓN GENERAL
+-------------------
+Landing page para venta de propiedad inmobiliaria en 
+Monterrey, Santa Cruz, Bolivia. actualmente solo contamos con 1 propiedad.
+
+PALETA DE COLORES
+-----------------
+- Primario: Negro (#1a1a1a) - Elegancia y sofisticación
+- Secundario: Dorado (#D4AF37) - Lujo y exclusividad
+- Acento: Verde (WhatsApp) - Para botones de contacto
+
+MARCA NOVAMONTERO
+-----------------
+- Logo tipográfico: "Nova" en dorado, "Montero" en blanco
+- Header fijo con navegación
+- Footer con redes sociales y copyright
+
+PROPIEDAD DISPONIBLE
+--------------------
+
+ID | Tipo | Título                                    | Precio      | Hab | Baños | Área   | Estac
+---|------|-------------------------------------------|-------------|-----|-------|--------|------
+1  | Casa | Casa Moderna en Residencial Las Flores    | $850,000 Bs | 4   | 3     | 280 m² | 2
+
+CONTACTO
+--------
+- WhatsApp: +591 73174612
+- Teléfono: +591 73174612
+- Email: contacto@novamontero.com
+- Dirección: Av. Principal 123, Monterrey
+
+ESTRUCTURA DE ARCHIVOS
+----------------------
+
+proyecto paginas para venta de casas/
+├── index.html                    # Página principal con listado
+├── CNAME                         # Archivo vacío (dominio no configurado)
+├── resumen-proyecto.txt          # Este archivo
+├── implementar1.txt              # Documento de diseño de marca
+├── assets/
+│   ├── css/
+│   │   └── styles.css           # Estilos personalizados con variables CSS
+│   ├── js/
+│   │   ├── main.js              # Lógica principal (listado, filtros, WhatsApp)
+│   │   └── property.js          # Lógica para páginas individuales
+│   └── images/
+│       ├── placeholder.svg       # Imagen placeholder
+│       └── propiedad 1/          # Imágenes de la propiedad 1
+│           ├── principal.png
+│           ├── 1.1.png
+│           ├── 1.2.png
+│           ├── 1.3.png
+│           ├── 1.4.png
+│           ├── 1.5.png
+│           └── 1.6.png
+├── data/
+│   └── properties.json           # Datos de la propiedad
+├── propiedades/
+│   └── 1/index.html              # Página individual propiedad 1
+├── plantillas/
+│   └── index.html                # Plantilla para crear nuevas propiedades
+└── docs/
+    └── guia-despliegue.md        # Guía de despliegue
+
+FUNCIONALIDADES IMPLEMENTADAS
+------------------------------
+
+1. PÁGINA PRINCIPAL (index.html)
+   - Header fijo con logo NovaMontero
+   - Hero section con título y descripción
+   - Tarjeta de propiedad con imagen y datos
+   - Sección "¿Por Qué Elegirnos?" con 3 beneficios
+   - Sección de contacto con formulario
+   - Footer con redes sociales y copyright NovaMontero
+
+2. PÁGINA INDIVIDUAL DE LA PROPIEDAD (propiedades/1/index.html)
+   - Hero con imagen principal y datos clave
+   - Estadísticas rápidas (habitaciones, baños, área, estacionamiento)
+   - Descripción detallada
+   - Características de la propiedad
+   - Galería de 6 imágenes
+   - Tarjeta de contacto del asesor
+   - Botón de WhatsApp flotante
+   - Código QR para compartir
+
+3. INTEGRACIÓN CON WHATSAPP
+   - Mensaje predefinido con precio
+   - Botones de contacto en tarjeta y página individual
+   - Botón flotante en página individual
+   - Formulario de contacto que redirige a WhatsApp
+
+4. DISEÑO RESPONSIVO
+   - Menú hamburguesa para móvil
+   - Grid adaptable a diferentes tamaños de pantalla
+   - Imágenes con object-cover para mantener proporción
+
+5. ANIMACIONES Y TRANSICIONES
+   - Scroll animations con Intersection Observer
+   - Hover lift en tarjetas
+   - Transiciones suaves en botones y enlaces
+   - Efecto shimmer en elementos destacados
+
+6. SEO
+   - Meta tags Open Graph para redes sociales
+   - Meta tags Twitter Card
+   - Descripciones optimizadas
+
+ARCHIVOS MODIFICADOS EN LA SESIÓN
+----------------------------------
+
+1. data/properties.json
+   - Actualizado a moneda boliviana (Bs)
+   - Ubicación cambiada a Monterrey, Santa Cruz
+   - Teléfono actualizado a +591 73174612
+   - Ruta de imagen corregida
+
+2. propiedades/1/index.html
+   - Colores actualizados a negro/dorado
+   - Marca actualizada a NovaMontero
+   - Datos cambiados a Bolivia
+   - WhatsApp actualizado a +591 73174612
+   - Imágenes apuntando a carpeta "propiedad 1"
+
+3. assets/js/main.js
+   - Colores de botones actualizados a dorado
+   - Marca actualizada a NovaMontero
+   - Datos de ejemplo actualizados a solo 1 propiedad
+   - Número de WhatsApp actualizado
+   - Función formatPrice actualizada a Bolivianos
+   - Animaciones de scroll implementadas
+
+4. assets/js/property.js
+   - Número de WhatsApp actualizado
+
+5. index.html
+   - Colores actualizados a negro/dorado
+   - Marca actualizada a NovaMontero
+   - Logo tipográfico: "Nova" dorado, "Montero" blanco
+   - Teléfono de contacto actualizado
+   - Dirección actualizada a Monterrey
+   - Meta tags SEO agregados
+
+6. plantillas/index.html
+   - Colores actualizados a negro/dorado
+   - Marca actualizada a NovaMontero
+
+7. assets/css/styles.css
+   - Animaciones de scroll agregadas
+   - Clases hover-lift agregadas
+   - Efecto shimmer agregado
+
+IMÁGENES DE LA PROPIEDAD 1
+---------------------------
+
+Las imágenes están en: assets/images/propiedad 1/
+
+- principal.png   → Imagen principal (hero)
+- 1.1.png         → Fachada principal
+- 1.2.png         → Sala de estar
+- 1.3.png         → Cocina moderna
+- 1.4.png         → Recámara principal
+- 1.5.png         → Jardín trasero
+- 1.6.png         → Área de servicio
+
+NOTAS TÉCNICAS
+--------------
+
+- Framework CSS: Tailwind CSS (CDN)
+- JavaScript: Vanilla JS (sin frameworks)
+- Imágenes: Formato PNG
+- Moneda: Bolivianos (Bs)
+- Código de país WhatsApp: +591 (Bolivia)
+- Marca: NovaMontero

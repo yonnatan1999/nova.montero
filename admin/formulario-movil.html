@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Nueva Propiedad | NovaMontero</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: { 400: '#D4AF37', 500: '#C5A028' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { -webkit-tap-highlight-color: transparent; }
+        input, select, textarea { font-size: 16px !important; }
+        .step { display: none; }
+        .step.active { display: block; }
+        .chip { transition: all 0.15s; }
+        .chip:active { transform: scale(0.95); }
+        .chip.selected { background: #D4AF37; color: black; border-color: #D4AF37; }
+        .btn-next { background: #D4AF37; }
+        .btn-next:active { background: #C5A028; }
+        .progress-fill { transition: width 0.3s ease; }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen pb-safe">
+    <!-- Header -->
+    <header class="bg-black text-white py-3 px-4 sticky top-0 z-50">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-1">
+                <span class="text-xl font-bold text-gold-400">Nova</span>
+                <span class="text-xl font-bold">Montero</span>
+            </div>
+            <span class="text-xs text-gray-400">Nueva Propiedad</span>
+        </div>
+        <!-- Progress bar -->
+        <div class="mt-3 h-1 bg-gray-700 rounded-full overflow-hidden">
+            <div id="progressBar" class="progress-fill h-full bg-gold-400 rounded-full" style="width: 33%"></div>
+        </div>
+    </header>
+
+    <main class="px-4 py-6 max-w-lg mx-auto">
+        <!-- STEP 1: Básico -->
+        <div id="step1" class="step active">
+            <h2 class="text-lg font-bold text-gray-800 mb-1">Datos básicos</h2>
+            <p class="text-sm text-gray-500 mb-4">Información principal de la propiedad</p>
+
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Título *</label>
+                    <input type="text" id="title" placeholder="Ej: Casa en Residencial Las Flores" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-400 focus:border-transparent bg-white">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Tipo *</label>
+                    <select id="type" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-400 bg-white">
+                        <option value="Casa">Casa</option>
+                        <option value="Apartamento">Apartamento</option>
+                        <option value="Terreno">Terreno</option>
+                        <option value="Local Comercial">Local Comercial</option>
+                        <option value="Oficina">Oficina</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Precio (Bs) *</label>
+                    <input type="number" id="price" inputmode="numeric" placeholder="850000" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-400 bg-white">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Dirección *</label>
+                    <input type="text" id="address" placeholder="Av. Las Flores 123" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-400 bg-white">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Zona / Barrio</label>
+                    <input type="text" id="neighborhood" placeholder="Barrio Las Flores" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-400 bg-white">
+                </div>
+            </div>
+
+            <button onclick="goStep(2)" class="btn-next w-full mt-6 py-3 rounded-xl font-semibold text-black text-lg">
+                Siguiente →
+            </button>
+        </div>
+
+        <!-- STEP 2: Detalles -->
+        <div id="step2" class="step">
+            <h2 class="text-lg font-bold text-gray-800 mb-1">Detalles</h2>
+            <p class="text-sm text-gray-500 mb-4">Características de la propiedad</p>
+
+            <div class="grid grid-cols-2 gap-3 mb-5">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Habitaciones</label>
+                    <input type="number" id="rooms" inputmode="numeric" value="3" min="0" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-400 bg-white text-center text-lg font-bold">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Baños</label>
+                    <input type="number" id="bathrooms" inputmode="numeric" value="2" min="0" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-400 bg-white text-center text-lg font-bold">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Área (m²)</label>
+                    <input type="number" id="area" inputmode="numeric" value="200" min="0" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-400 bg-white text-center text-lg font-bold">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Estacionamiento</label>
+                    <input type="number" id="parking" inputmode="numeric" value="1" min="0" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-400 bg-white text-center text-lg font-bold">
+                </div>
+            </div>
+
+            <div class="mb-5">
+                <label class="block text-sm font-medium text-gray-700 mb-2">Características</label>
+                <div id="chips" class="flex flex-wrap gap-2">
+                    <button type="button" onclick="toggle(this)" class="chip px-3 py-2 border border-gray-300 rounded-full text-sm bg-white">Jardín</button>
+                    <button type="button" onclick="toggle(this)" class="chip px-3 py-2 border border-gray-300 rounded-full text-sm bg-white">Piscina</button>
+                    <button type="button" onclick="toggle(this)" class="chip px-3 py-2 border border-gray-300 rounded-full text-sm bg-white">Área de BBQ</button>
+                    <button type="button" onclick="toggle(this)" class="chip px-3 py-2 border border-gray-300 rounded-full text-sm bg-white">Cocina equipada</button>
+                    <button type="button" onclick="toggle(this)" class="chip px-3 py-2 border border-gray-300 rounded-full text-sm bg-white">Aire acondicionado</button>
+                    <button type="button" onclick="toggle(this)" class="chip px-3 py-2 border border-gray-300 rounded-full text-sm bg-white">Seguridad 24h</button>
+                    <button type="button" onclick="toggle(this)" class="chip px-3 py-2 border border-gray-300 rounded-full text-sm bg-white">Estacionamiento techado</button>
+                    <button type="button" onclick="toggle(this)" class="chip px-3 py-2 border border-gray-300 rounded-full text-sm bg-white">Área de servicio</button>
+                    <button type="button" onclick="toggle(this)" class="chip px-3 py-2 border border-gray-300 rounded-full text-sm bg-white">Bodega</button>
+                    <button type="button" onclick="toggle(this)" class="chip px-3 py-2 border border-gray-300 rounded-full text-sm bg-white">Terraza</button>
+                    <button type="button" onclick="toggle(this)" class="chip px-3 py-2 border border-gray-300 rounded-full text-sm bg-white">Gimnasio</button>
+                    <button type="button" onclick="toggle(this)" class="chip px-3 py-2 border border-gray-300 rounded-full text-sm bg-white">Cerca de escuelas</button>
+                    <button type="button" onclick="toggle(this)" class="chip px-3 py-2 border border-gray-300 rounded-full text-sm bg-white">Cerca de comercios</button>
+                    <button type="button" onclick="toggle(this)" class="chip px-3 py-2 border border-gray-300 rounded-full text-sm bg-white">Vista panorámica</button>
+                </div>
+                <div class="flex gap-2 mt-3">
+                    <input type="text" id="customFeature" placeholder="Otra característica..." class="flex-1 px-3 py-2 border border-gray-300 rounded-xl text-sm bg-white">
+                    <button onclick="addCustom()" class="bg-gray-200 px-3 py-2 rounded-xl text-sm font-medium">+ Agregar</button>
+                </div>
+                <div id="selectedChips" class="flex flex-wrap gap-2 mt-2"></div>
+            </div>
+
+            <div class="flex gap-3">
+                <button onclick="goStep(1)" class="flex-1 bg-gray-200 text-gray-700 py-3 rounded-xl font-semibold">← Atrás</button>
+                <button onclick="goStep(3)" class="flex-1 btn-next py-3 rounded-xl font-semibold text-black">Siguiente →</button>
+            </div>
+        </div>
+
+        <!-- STEP 3: Descripción + Fotos -->
+        <div id="step3" class="step">
+            <h2 class="text-lg font-bold text-gray-800 mb-1">Descripción y fotos</h2>
+            <p class="text-sm text-gray-500 mb-4">Describe la propiedad y agrega imágenes</p>
+
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Descripción *</label>
+                    <textarea id="description" rows="4" placeholder="Describe la propiedad: cómo se ve, qué tiene, por qué es especial..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-400 resize-none bg-white"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Fotos (escribe las rutas)</label>
+                    <p class="text-xs text-gray-500 mb-2">Si tienes las fotos en el celular, dime dónde están o mándamelas por WhatsApp después</p>
+                    <textarea id="photos" rows="3" placeholder="Ej: fotos/casa1.jpg&#10;fotos/casa2.jpg&#10;(una por línea o déjalo vacío)" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-400 resize-none bg-white"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Mensaje personalizado para WhatsApp (opcional)</label>
+                    <input type="text" id="whatsappMsg" placeholder="Déjalo vacío para generar automático" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-400 bg-white">
+                </div>
+            </div>
+
+            <div class="flex gap-3 mt-6">
+                <button onclick="goStep(2)" class="flex-1 bg-gray-200 text-gray-700 py-3 rounded-xl font-semibold">← Atrás</button>
+                <button onclick="goStep(4)" class="flex-1 btn-next py-3 rounded-xl font-semibold text-black">Revisar →</button>
+            </div>
+        </div>
+
+        <!-- STEP 4: Revisar y enviar -->
+        <div id="step4" class="step">
+            <h2 class="text-lg font-bold text-gray-800 mb-1">Revisar y enviar</h2>
+            <p class="text-sm text-gray-500 mb-4">Verifica los datos antes de enviar</p>
+
+            <div id="summary" class="bg-white rounded-xl border border-gray-200 p-4 mb-6 space-y-3 text-sm">
+                <!-- filled by JS -->
+            </div>
+
+            <div class="flex gap-3 mb-4">
+                <button onclick="goStep(3)" class="flex-1 bg-gray-200 text-gray-700 py-3 rounded-xl font-semibold">← Editar</button>
+                <button onclick="sendWhatsApp()" class="flex-1 bg-green-500 text-white py-3 rounded-xl font-semibold flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Enviar por WhatsApp
+                </button>
+            </div>
+
+            <button onclick="copyText()" class="w-full bg-gray-200 text-gray-700 py-3 rounded-xl font-semibold">
+                Copiar texto
+            </button>
+        </div>
+    </main>
+
+    <script>
+        let features = [];
+
+        function goStep(n) {
+            document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+            document.getElementById('step' + n).classList.add('active');
+            document.getElementById('progressBar').style.width = (n * 25) + '%';
+            if (n === 4) buildSummary();
+            window.scrollTo(0, 0);
+        }
+
+        function toggle(btn) {
+            btn.classList.toggle('selected');
+            const f = btn.textContent.trim();
+            if (features.includes(f)) {
+                features = features.filter(x => x !== f);
+            } else {
+                features.push(f);
+            }
+            renderChips();
+        }
+
+        function addCustom() {
+            const inp = document.getElementById('customFeature');
+            const v = inp.value.trim();
+            if (v && !features.includes(v)) {
+                features.push(v);
+                renderChips();
+                inp.value = '';
+            }
+        }
+
+        function removeFeature(f) {
+            features = features.filter(x => x !== f);
+            document.querySelectorAll('.chip').forEach(c => {
+                if (c.textContent.trim() === f) c.classList.remove('selected');
+            });
+            renderChips();
+        }
+
+        function renderChips() {
+            document.getElementById('selectedChips').innerHTML = features.map(f =>
+                '<span class="bg-gold-100 text-gold-700 px-3 py-1 rounded-full text-sm flex items-center gap-1">' + f + ' <button onclick="removeFeature(\'' + f + '\')" class="text-gold-500 hover:text-red-500 font-bold">&times;</button></span>'
+            ).join('');
+        }
+
+        function getVal(id) { return document.getElementById(id).value.trim(); }
+
+        function formatPrice(p) {
+            return '$' + Number(p).toLocaleString('es-BO') + ' Bs';
+        }
+
+        function buildSummary() {
+            const d = getVal('description') || '(sin descripción)';
+            const photos = getVal('photos').split('\n').filter(l => l.trim());
+            const price = getVal('price');
+            const neighborhood = getVal('neighborhood');
+
+            document.getElementById('summary').innerHTML = 
+                '<div><span class="font-semibold text-gray-700">Título:</span> ' + getVal('title') + '</div>' +
+                '<div><span class="font-semibold text-gray-700">Tipo:</span> ' + getVal('type') + '</div>' +
+                '<div><span class="font-semibold text-gray-700">Precio:</span> ' + (price ? formatPrice(price) : 'No especificado') + '</div>' +
+                '<div><span class="font-semibold text-gray-700">Dirección:</span> ' + getVal('address') + (neighborhood ? ', ' + neighborhood : '') + '</div>' +
+                '<div><span class="font-semibold text-gray-700">Detalles:</span> ' + getVal('rooms') + ' hab · ' + getVal('bathrooms') + ' baños · ' + getVal('area') + ' m² · ' + getVal('parking') + ' parking</div>' +
+                '<div><span class="font-semibold text-gray-700">Características:</span> ' + (features.length ? features.join(', ') : 'Ninguna') + '</div>' +
+                '<div><span class="font-semibold text-gray-700">Descripción:</span> ' + d + '</div>' +
+                (photos.length ? '<div><span class="font-semibold text-gray-700">Fotos:</span> ' + photos.join(', ') + '</div>' : '') +
+                (getVal('whatsappMsg') ? '<div><span class="font-semibold text-gray-700">Mensaje WhatsApp:</span> ' + getVal('whatsappMsg') + '</div>' : '');
+        }
+
+        function buildMessage() {
+            const d = getVal('description') || '(sin descripción)';
+            const photos = getVal('photos').split('\n').filter(l => l.trim());
+            const price = getVal('price');
+            const neighborhood = getVal('neighborhood');
+
+            let msg = '🏠 *NUEVA PROPIEDAD - NovaMontero*\n\n';
+            msg += '📌 *Título:* ' + getVal('title') + '\n';
+            msg += '🏷️ *Tipo:* ' + getVal('type') + '\n';
+            if (price) msg += '💰 *Precio:* ' + formatPrice(price) + '\n';
+            msg += '📍 *Dirección:* ' + getVal('address') + '\n';
+            if (neighborhood) msg += '🏘️ *Zona:* ' + neighborhood + '\n';
+            msg += '\n📐 *Detalles:*\n';
+            msg += '  • Habitaciones: ' + getVal('rooms') + '\n';
+            msg += '  • Baños: ' + getVal('bathrooms') + '\n';
+            msg += '  • Área: ' + getVal('area') + ' m²\n';
+            msg += '  • Estacionamiento: ' + getVal('parking') + '\n';
+            if (features.length) msg += '\n✨ *Características:* ' + features.join(', ') + '\n';
+            msg += '\n📝 *Descripción:*\n' + d + '\n';
+            if (photos.length) msg += '\n📷 *Fotos:* ' + photos.join(', ') + '\n';
+            if (getVal('whatsappMsg')) msg += '\n💬 *Mensaje para WhatsApp:* ' + getVal('whatsappMsg') + '\n';
+            msg += '\n---\nEnvíame las fotos y las agrego.';
+
+            return msg;
+        }
+
+        function sendWhatsApp() {
+            const msg = buildMessage();
+            const url = 'https://wa.me/59173174612?text=' + encodeURIComponent(msg);
+            window.open(url, '_blank');
+        }
+
+        function copyText() {
+            const msg = buildMessage();
+            navigator.clipboard.writeText(msg).then(() => {
+                const btn = event.target;
+                const original = btn.textContent;
+                btn.textContent = '¡Copiado!';
+                setTimeout(() => btn.textContent = original, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

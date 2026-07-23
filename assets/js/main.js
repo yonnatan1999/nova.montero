@@ -140,36 +140,6 @@ function getSampleProperties() {
             image: 'assets/images/propiedad 1/principal.png',
             description: 'Hermosa casa moderna con acabados de lujo...',
             whatsappMessage: 'Hola, vi la Casa Moderna en Residencial Las Flores y estoy interesado'
-        },
-        {
-            id: 2,
-            title: 'Propiedad 2',
-            type: 'casa',
-            location: 'Montero, Santa Cruz',
-            price: 650000,
-            priceFormatted: '$650,000 Bs',
-            rooms: 3,
-            bathrooms: 2,
-            area: 200,
-            parking: 1,
-            image: 'assets/images/propiedad 1/principal.png',
-            description: 'Esta es la propiedad 2. Una hermosa casa en Montero.',
-            whatsappMessage: 'Hola, vi la Propiedad 2 y estoy interesado'
-        },
-        {
-            id: 3,
-            title: 'Casa de Víctor',
-            type: 'casa',
-            location: 'Cerca de la plaza, Montero, Santa Cruz',
-            price: 0,
-            priceFormatted: 'Consultar',
-            rooms: 2,
-            bathrooms: 2,
-            area: 60,
-            parking: 0,
-            image: 'https://drive.google.com/uc?export=view&id=19EioRsHp6anPL35EqeT9MD216muUAEq5',
-            description: 'Una casa decente en el tercer piso y acceso a la azotea.',
-            whatsappMessage: 'Hola, vi la Casa de Víctor y estoy interesado'
         }
     ];
 }

@@ -548,18 +548,3 @@ function formatPrice(price) {
     }).format(price);
 }
 
-/**
- * Generate QR Code URL
- */
-function generateQRCodeUrl(url) {
-    return `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(url)}`;
-}
-
-// Export functions for use in property pages
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = {
-        CONFIG,
-        formatPrice,
-        generateQRCodeUrl
-    };
-}

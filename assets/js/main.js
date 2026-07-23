@@ -140,6 +140,21 @@ function getSampleProperties() {
             image: 'assets/images/propiedad 1/principal.png',
             description: 'Hermosa casa moderna con acabados de lujo...',
             whatsappMessage: 'Hola, vi la Casa Moderna en Residencial Las Flores y estoy interesado'
+        },
+        {
+            id: 2,
+            title: 'Propiedad 2',
+            type: 'casa',
+            location: 'Monterrey, Santa Cruz',
+            price: 650000,
+            priceFormatted: '$650,000 Bs',
+            rooms: 3,
+            bathrooms: 2,
+            area: 200,
+            parking: 1,
+            image: 'assets/images/propiedad 1/principal.png',
+            description: 'Esta es la propiedad 2. Una hermosa casa en Monterrey.',
+            whatsappMessage: 'Hola, vi la Propiedad 2 y estoy interesado'
         }
     ];
 }

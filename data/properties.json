@@ -74,5 +74,36 @@
             "phone": "+591 73174612",
             "email": "carlos@novamontero.com"
         }
+    },
+    {
+        "id": 3,
+        "title": "Casa de Víctor",
+        "type": "casa",
+        "location": "Cerca de la plaza, Monterrey, Santa Cruz",
+        "address": "Calle junin",
+        "price": 0,
+        "priceFormatted": "Consultar",
+        "rooms": 2,
+        "bathrooms": 2,
+        "area": 60,
+        "parking": 0,
+        "yearBuilt": 2026,
+        "image": "https://drive.google.com/uc?export=view&id=19EioRsHp6anPL35EqeT9MD216muUAEq5",
+        "description": "Una casa decente en el tercer piso y acceso a la azotea.",
+        "features": [
+            "Cocina",
+            "Aire acondicionado",
+            "Acceso a azotea"
+        ],
+        "gallery": [
+            { "url": "https://drive.google.com/uc?export=view&id=19EioRsHp6anPL35EqeT9MD216muUAEq5", "alt": "Foto 1" },
+            { "url": "https://drive.google.com/uc?export=view&id=1I2jaLL9KplNw9ujfKHIJtbBAewGihS5c", "alt": "Foto 2" }
+        ],
+        "whatsappMessage": "Hola, vi la Casa de Víctor y estoy interesado.",
+        "advisor": {
+            "name": "Carlos Mendoza",
+            "phone": "+591 73174612",
+            "email": "carlos@novamontero.com"
+        }
     }
 ]
